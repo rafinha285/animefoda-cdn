@@ -3,6 +3,6 @@ import getImg from "./anime/getImg";
 
 const animeGetRouter = Router()
 
-animeGetRouter.get("img",getImg)
+animeGetRouter.get("/img",getImg)
 
 export default animeGetRouter
