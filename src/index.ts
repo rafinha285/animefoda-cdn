@@ -8,6 +8,10 @@ const app = e()
 app.use("/ani",animeGetRouter)
 app.use("/",episodeGetRouter)
 
+app.get("/", (req,res)=>{
+    res.render("https://animefoda.top")
+})
+
 app.listen(8080,()=>{
     Console.log(`http://0.0.0.0:8080`)
 })
