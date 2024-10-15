@@ -7,8 +7,8 @@ import { ANIME_PATH } from "../../config/pathConfig";
 
 export default async function getDownload(req:e.Request,res:e.Response) {
     try{
-        let { aniid, seasonid, epid, reso } = req.params;
-        let filePath = path.join(ANIME_PATH, aniid, 'seasons', seasonid, epid, `${epid}-${reso}.mp4`);
+        let { aniId, seasonId, epId, reso } = req.params;
+        let filePath = path.join(ANIME_PATH, aniId, 'seasons', seasonId, epId, `${epId}-${reso}.mp4`);
 
         Console.log('File path:', filePath); // Adicione isso para verificar o caminho do arquivo
 
@@ -19,7 +19,7 @@ export default async function getDownload(req:e.Request,res:e.Response) {
 
         res.setHeader('Content-Type', 'video/mp4');
         res.setHeader('Content-Length', fileSize);
-        res.setHeader('Content-Disposition', `attachment; filename=${epid}.mp4`);
+        res.setHeader('Content-Disposition', `attachment; filename=${epId}.mp4`);
 
         let uploadedBytes = 0;
         readStream.on('data', (chunk) => {
@@ -48,5 +48,5 @@ export default async function getDownload(req:e.Request,res:e.Response) {
         // res.sendFile(filePath)
     }catch(err){
         sendError(res,ErrorType.default,500,err)
-    }    
+    }
 }

@@ -2,6 +2,7 @@ import e from "express";
 import path from "path";
 import { ANIME_PATH } from "../../config/pathConfig";
 import { ErrorType, sendError } from "../../functions/Error";
+import Console from "../../functions/Console";
 
 export default function getStream(req:e.Request,res:e.Response){
     try{
