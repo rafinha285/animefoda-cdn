@@ -9,7 +9,7 @@ app.use("/ani",animeGetRouter)
 app.use("/",episodeGetRouter)
 
 app.get("/", (req,res)=>{
-    res.render("https://animefoda.top")
+    res.redirect("https://animefoda.top")
 })
 
 app.listen(8080,()=>{
