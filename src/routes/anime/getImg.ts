@@ -22,6 +22,7 @@ export default function getImg(req:e.Request,res:e.Response){
                 return res.sendFile(pathImg)
             }
         }
+        throw 2
     }catch(err){
         if(err == 1){
             sendError(res,ErrorType.undefined)
